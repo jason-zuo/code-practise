@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script src="http://www.jq22.com/jquery/vue.min.js"></script><script src="http://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="checkAll" v-check-all="checkAll" check-data="checkData">
+        <ul>
+            <li v-for="item in checkData">
+                <input type="checkbox" v-model="item.checked">
+                {{item.text}}
+            </li>
+        </ul>
+    </div>
+<!-- 全选以及反选功能，可以采用computed属性或者是自定义指令 -->
+<!-- 实现参考 https://www.zhihu.com/question/37833194/answer/91812053-->
+<script>
+     new Vue({
+        el : '#app',
+        data : {
+            
+                selectItems : [1,2,3,4] , //从服务端取来的数据 ,
+                checkData : [
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'},
+                    {checked :false , text : '你说啥'}
+                ],
+                checkAll : false
+            
+        },
+        methods : {
+
+        },
+        //方法一
+        computed: {
+            selectAll : {
+                get : function () {
+                    return this.selectItems == this.selectItems.length;
+                },
+                set : function (value) {
+                    this.selectItems.forEach(function(item){
+                        item.checked = value 
+                    })
+                    return value ;
+                }
+            },
+            //选中的数量
+            selectCount : {
+                get : function () {
+                    var i = 0 ;
+                    this.selectItems.forEach(function(item){
+                        if (item.checked){
+                            i++;
+                        }
+                    })
+                }
+            },
+            //选中的数组
+            checkedGroups : {
+                get : function () {
+                    var checkedGroups = [] ;
+                    this.selectItems.forEach(function(item){
+                        if (item.checked) {
+                            checkedGroups.push(item);
+                        }
+                        return console.log(checkedGroups);
+                    })
+                }
+            }
+        },
+        //方法二
+        created () {
+            // console.log(this.checkedGroups)
+        }
+
+     })
+</script>
+</body>
+</html>
