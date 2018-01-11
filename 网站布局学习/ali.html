@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.cc {
+			margin: 20px auto;
+			cursor: pointer;
+			width: 100%;
+			height: 560px;
+		}
+
+		.cc>div {
+			position: relative;
+			transition: all 0.5s;
+			transform-style:preserve-3d;
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			-ms-transition: all 0.5s;
+			-o-transition: all 0.5s;
+		}
+
+		.img {
+			position: absolute;
+			right: 60px;
+			width: 800px;
+			;
+			transition: all 0.5s;
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			-ms-transition: all 0.5s;
+			-o-transition: all 0.5s;
+			opacity: 0;
+			filter: alpha(opacity=0);
+		}
+
+		.img1 {
+			margin-top: 10px;
+		}
+
+		.img2 {
+			margin-top: 20px;
+		}
+
+		.img3 {
+			margin-top: 30px;
+		}
+
+		.img img {
+			width: 100%;
+			transition: all 0.5s;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="cc">
+		<div>
+			<div class="img img1">
+				<img src="https://img.alicdn.com/tfs/TB1R1fyeMvD8KJjy0FlXXagBFXa-1600-880.png" alt="" />
+			</div>
+			<div class="img img2">
+				<img src="https://img.alicdn.com/tfs/TB1DvfteS_I8KJjy0FoXXaFnVXa-1600-880.png" alt="" />
+			</div>
+			<div class="img img3">
+				<img src="https://img.alicdn.com/tfs/TB1y2fteS_I8KJjy0FoXXaFnVXa-1600-880.png" alt="" />
+			</div>
+		</div>
+	</div>
+	<!--<div class="cc">
+<div>
+<div class="img img1">
+<img src="images/4.png" alt=""/>
+</div>
+<div class="img img2">
+<img src="images/5.png" alt=""/>
+</div>
+<div class="img img3">
+<img src="images/6.png" alt=""/>
+</div>
+</div>
+</div>-->
+	<input type="text" class="bode" />
+</body>
+<script src="http://code.jquery.com/jquery-git.min.js"></script>
+<script>
+	/*
+	//输入手机号时，自动填充-
+	$(".bode").on("keyup",function(){
+	var $val=$(".bode").val();
+	if($val.length == 3 || $val.length == 8){
+	$val=$val+"-";
+	}
+	$(".bode").val($val);
+	});*/
+	$(".cc>div").on("mousemove", function (e) {
+		var x = e.clientX,
+			y = e.clientY,
+			offX = $(this).offset().left,
+			offY = $(this).offset().top,
+			bb = x - offX,
+			cc = y - offY,
+			w = $(this).width() * 0.5,
+			h = $(this).height() * 0.5;
+		if (bb < w && cc < h) {//左上
+			aa = '0deg'; dd = "-6deg"
+		} else if (bb > w && cc < h) {//右上
+			aa = "-20deg"; dd = "-53deg"
+		} else if (bb < w && cc > h) {//左下
+			aa = '-22deg'; dd = "-26deg"
+		} else if (bb > w && cc > h) {//右下
+			aa = '10deg'; dd = "-26deg"
+		} else {
+			aa = '0'; dd = "0"
+		}
+		var xx = "rotateX(" + aa + ")" + " " + "rotateY(" + dd + ")";
+		$(this).css("transform", xx);
+		$(".img1").css("transform", "translateZ(50px)");
+		$(".img2").css("transform", "translateZ(100px)");
+		$(".img3").css("transform", "translateZ(150px)");
+		console.log(aa, dd)
+	});
+	$(".cc>div").on("mouseout", function () {
+		$(this).css("transform", "rotateX(0deg) rotateY(0deg)");
+	});
+	$(function () {
+		$(".img").each(function () {
+			var $this = $(this);
+			$this.animate({ "marginTop": 0, "opacity": 1 });
+		})
+	})
+</script>
+
+</html>
