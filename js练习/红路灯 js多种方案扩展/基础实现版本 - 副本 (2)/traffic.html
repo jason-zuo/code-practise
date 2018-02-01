@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0 ;
+            padding : 0 ;
+        }
+        .container{
+            width : 500px ;
+            height : 500px;
+            margin : 100px auto ;
+            border : 1px solid #ddd ;
+        }
+        #traffic>li {
+            display: block ;
+        }
+        #traffic span {
+            display:  inline-block ;
+            width : 50px;
+            height : 50px;
+            background-color : gray ;
+            margin : 5px;
+            border-radius : 50% ;
+        }
+        #traffic.stop li:nth-child(1) span{
+            background-color : #a00;
+        }
+        #traffic.wait li:nth-child(2) span{
+            background-color : #aa0;
+        }
+        #traffic.pass:nth-child(3) span{
+            background-color : blue ;
+        }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="wait" id="traffic">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+    </div>
+<script src="./traffic.js"></script>    
+</body>
+</html>
