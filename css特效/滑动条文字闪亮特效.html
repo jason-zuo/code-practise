@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0;
+            padding :0 ;
+
+        }
+        @keyframes sliderouchlock{
+            0% {
+                background-position : -200px 0;
+            }
+            100% {
+                background-position : 200px 0 ;
+            }
+        }
+        div{
+            width : 480px;
+            height : 50px;
+            text-align : center ;
+            z-index:  1 ;
+            background:transparent ;
+            color : #61688A ;
+            font-size :16px; 
+
+        }
+        .slider-bar{
+            display: inline-block;
+            background : -webkit-gradient(linear, left top, right top, color-stop(0, #61688A), color-stop(0.4, #61688A), color-stop(0.5, #fff), color-stop(0.6, #61688A), color-stop(1, #61688A)) ;
+            -webkit-background-clip: text ;
+            -webkit-text-fill-color: transparent ;
+            -webkit-animation : sliderouchlock 3s infinite ;
+            -webkit-text-size-adjust: none ;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="slider-bar">
+            拖到最右边
+        </span>
+    </div>
+</body>
+</html>
