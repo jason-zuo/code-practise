@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+        }
+        .noble-anniversary-ad{
+            display: inline-block;
+            position : fixed ;
+            z-index : 500 ;
+            left : 0;
+            top : 0;
+            right : 0;
+            bottom : 0;
+            font-size : 0;
+            text-align: center ;
+            background : rgba(0,0,0,.5) ;
+        }
+        .noble-anniversary-ad:before {
+            display : inline-block;
+            content : '' ;
+            width : 0;
+            height: 100%;
+            vertical-align: middle ;
+            -webkit-user-select: none ;
+        } 
+        .na-advertise-wrap{
+            display: inline-block;
+            width : 450px;
+            height : 540px;
+            padding : 4px 5px 6px;
+            vertical-align: middle ;
+            background : #f7e79b ;
+            background : -webkit-linear-gradient(left top,#fff2a4 ,#976931);
+            background : -o-linear-gradient(bottom right,#fff2a4 ,#976931);
+            background: linear-gradient(to bottom right,#fff2a4 ,#976931);
+            border-radius : 4px; 
+        }
+        .na-advertise-box{
+            position : relative ;
+            padding-top : 30px;
+            height :511px;
+            /* background : url(../../../activity/res/nobleanniversary/enter_02.png?v=20180108) no-repeat */
+        }
+        .na-advertise-box:after, .na-advertise-box:before {
+            position : absolute ;
+            content : '' ;
+            left : -20px;
+            top : 56px;
+            width : 97px;
+            height : 45px;
+            /* background : url(../../../activity/res/nobleanniversary/enter_01.png?v=20180108) 0 -160px no-repeat; */
+        }
+        .na-advertise-title {
+            position : absolute ;
+            top : -47px;
+            left : 78px;
+            width : 293px;
+            height : 67px;
+            /* background : url(../../../activity/res/nobleanniversary/enter_01.png?v=20180108) no-repeat; */
+        }
+        .na-advertise-close {
+            position : absolute ;
+            top : 6px; 
+            right :6px;
+            width : 12px;
+            height : 12px;
+            /* background : url(../../../activity/res/nobleanniversary/enter_01.png?v=20180108) -320px 0 no-repeat; */
+        }
+        .na-advertise-headline {
+            width : 330px;
+            height : 42px;
+            margin : 0 auto 20px;
+            padding-top : 38px;
+            background : url(../../../activity/res/nobleanniversary/enter_01.png?v=20180108) 8px -80px no-repeat;
+        }
+        .na-advertise-btn {
+            display: inline-block ;
+            min-width : 36px;
+            line-height : 18px;
+            padding : 0 8px;
+            font-size : 12px;
+            color : #d8bf79 ;
+            text-align:center ;
+            border : 1px solid #aa8145 ;
+            border-radius : 10px;
+            background-image: -webkit-linear-gradient(-65deg,#fff2a4 20%,#976931) ;
+            -webkit-background-clip : text ;
+            -webkit-text-fill-color : transparent ;
+        }
+    </style>
+</head>
+<body>
+    <div class="noble-anniversary-ad">
+        <div class="na-advertise-wrap">
+            <div class="na-advertise-box">
+                <div class="na-advertise-title"></div>
+                <div class="na-advertise-close"></div>
+                <div class="na-advertise-headline">
+                    <a href="https://www.douyu.com/t/nobleoneyear" target="_blank" class="na-advertise-btn go-zt-page">活动详情</a>
+                </div>
+                <div class="na-advertise-content">
+                    <a class="na-advertise-list go-pay-page" href="/web_game/welcome/18" target="_blank">
+                        <div class="na-advertise-weal na-advertise-weal1">
+                            <span>福利1</span>
+                        </div>
+                        <div class="na-advertise-info">
+                            <h2>充值免费体验贵族特权</h2>
+                            <p>每日单笔最低充
+                                <span class="na-hight-light2">10鱼翅免费体验贵族</span>特权</p>
+                            <span class="na-advertise-date">已结束</span>
+                            <span href="javascript:;" class="na-advertise-btn">查看</span>
+                        </div>
+                    </a>
+                    <a class="na-advertise-list go-noble-open">
+                        <div class="na-advertise-weal na-advertise-weal2">
+                            <span>福利2</span>
+                        </div>
+                        <div class="na-advertise-info">
+                            <h2>开通贵族返利</h2>
+                            <p>开通贵族返海量
+                                <span class="na-hight-light2">鱼丸、经验</span>
+                            </p>
+                            <span class="na-advertise-date">1月25日~2月23日</span>
+                            <span href="javascript:;" class="na-advertise-btn">查看</span>
+                        </div>
+                    </a>
+                    <a class="na-advertise-list go-noble-repay">
+                        <div class="na-advertise-weal na-advertise-weal3">
+                            <span>福利3</span>
+                        </div>
+                        <div class="na-advertise-info">
+                            <h2>续费贵族返还110%鱼翅</h2>
+                            <p>活动结束后将恢复至100%
+                                <span class="na-hight-light2">（最后1天）</span>
+                            </p>
+                            <span class="na-advertise-date">1月25日~2月23日</span>
+                            <span href="javascript:;" class="na-advertise-btn">查看</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="https://www.douyu.com/t/nobleoneyearreport?rid=85829" target="_blank" class="na-advertise-check">查看本房主播·贵族周年盘点
+                    <span class="na-advertise-check-arrow"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+        }
+        @keyframes scrollBtn3  {
+            0%{
+                transform : translate(0,10px) rotateY(0);
+                opacity : 0;
+            }
+            50%{
+                transform : translate(0,0) rotateY(180deg);
+                opacity : 1;
+            }
+            100%,90%{
+                transform : translate(0,-10px) rotateY(360deg);
+                opacity : 0;
+            }
+        }
+        .container{
+            position : relative ;
+            top: 50px;
+        }
+        .scroll-back{
+            top : 0;
+            position : absolute ;
+            left : 50% ;
+            width : 70px;
+            height : 70px;
+            line-height : 70px;
+            text-align: center ;
+            border-radius : 50% ;
+            cursor :crosshair;
+            background-color : #ffffff ;
+            transform : translate(-50%,-50%) ;
+        }
+        .scroll-back span{
+            animation : scrollBtn3 3s linear 0s infinite;
+            position : relative ;
+            z-index : 3;
+            width : 50%;
+            height : 50%;
+            display: inline-block;
+            vertical-align: middle ;
+        }
+        img{
+            vertical-align: top ;
+            display: inline-block;
+            width : auto ;
+            height : auto ;
+            max-width: 100%;
+            max-height : 100% ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="scroll-back backTop">
+            <span>
+                <img src="https://hyperpay.tech/themes/en/dist/images/arrow_03.svg" alt="">
+            </span>
+        </div>
+    </div>
+</body>
+</html>
