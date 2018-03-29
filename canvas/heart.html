@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="hert" width="200" height="200"></canvas>
+    <script>
+        var c = document.getElementById("hert");
+        var cxt = c.getContext("2d") ;
+        cxt.beginPath()
+        cxt.fillStyle="red"
+        cxt.strokeStyle = "red"
+        cxt.moveTo(75,40)
+        cxt.bezierCurveTo(70,37,70,25,50,25)
+        cxt.bezierCurveTo(20,25,20,62,5,20,62.5)
+        cxt.bezierCurveTo(20,80,40,102,75,120)
+        cxt.bezierCurveTo(110,102,130,80,130,62.5)
+        cxt.bezierCurveTo(130,62.5,130,25,100,25)
+        cxt.bezierCurveTo(85,25,75,37,75,40)
+        cxt.fill()
+        cxt.stroke()
+    </script>
+</body>
+</html>
