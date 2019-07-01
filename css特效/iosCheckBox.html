@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ffcb00;
+        }
+        .checkbox{
+            -webkit-appearance: none;
+            outline: none;
+            display: inline-block;
+            cursor: pointer;
+            width: 40px;
+            height: 20px;
+            position: relative;
+            border: 1px solid #ffcb00;
+            background-color: #2b542c;
+            border-radius: 20px;
+            background-clip: content-box;
+        }
+        .checkbox:before{
+            content: '';
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            background-color: #ffffff;
+
+        }
+        .checkbox:checked{
+            background-color: yellow;
+        }
+        .checkbox:checked:before{
+            left: 21px;
+        }
+        .check_anmitation{
+            transition: border cubic-bezier(0,0,0,1) 0.4 ;
+        }
+        .check_anmitation:before{
+            transition: left 0.3s;
+        }
+        .check_anmitation:checked{
+            background-color: #ffffaf;
+            transition: border ease 0.4s;
+        }
+        .check_anmitation:checked:before {
+            transition: left 0.3s;
+        }
+
+        .hackContainer{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #2b542c;
+        }
+
+        .ch_t{
+            display: none;
+        }
+        .ch_l{
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: #2b542c;
+            border-radius: 20px;
+            outline: none;
+            border: 1px solid #000000;
+        }
+        .ch_t:checked  + .ch_l:before{
+            left: 44%;
+        }
+        .ch_l:before{
+            position:relative;
+            top:-1px;
+        content: "";
+            display: block;
+            width:50%;
+            height:100%;
+            background-color:#fff;
+            border-radius:20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<!--sodo: 由于ie不支持appearance所以这种方法适合不考虑低版本浏览器的情况下-->
+<div class="container">
+    <input type="checkbox" class="checkbox check_anmitation"/>
+</div>
+<div class="hackContainer">
+    <input type="checkbox" class="ch_t" id="ch_label"/>
+    <label for="ch_label" class="ch_l"></label>
+</div>
+</body>
+</html>
